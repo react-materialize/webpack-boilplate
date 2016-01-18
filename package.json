@@ -15,7 +15,7 @@
     "materialize-css": "^0.97.3",
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
-    "react-materialize": "^0.14.0-beta3"
+    "react-materialize": "^0.14.0-rc1"
   },
   "devDependencies": {
     "babel": "^6.1.18",

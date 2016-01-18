@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Button from 'react-materialize/dist/Button';
+import {Button} from 'react-materialize';
 
 class App extends React.Component {
   render() {
