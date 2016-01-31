@@ -1,10 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Button} from 'react-materialize';
+import {Dropdown, Button} from 'react-materialize';
 
 const App = ({name}) =>
-  <Button> Hi {name}!</Button>;
+  <Dropdown trigger={
+    <Button>Drop me!</Button>
+  }>
+    <p>Hello</p>
+    <p>Hello</p>
+    <p>Hello</p>
+    <p>Bye</p>
+  </Dropdown>;
 
 ReactDOM.render(
-  <App name="stranger"/>, document.querySelector('.react-root')
+  <App />, document.querySelector('.react-root')
 );
