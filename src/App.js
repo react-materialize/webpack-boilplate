@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Breadcrumb from './Breadcrumb';
+import Navbar from './Navbar';
+import NavItem from './NavItem';
+
 
 export class App extends Component {
   constructor(props) {
@@ -8,7 +10,12 @@ export class App extends Component {
 
   render() {
     return (
-      <Breadcrumb>hi</Breadcrumb>
+      <div>
+        <Navbar className="blue" right>
+          <NavItem href=''>Foo</NavItem>
+          <NavItem href=''>Bar</NavItem>
+        </Navbar>
+      </div>
     );
   }
 }

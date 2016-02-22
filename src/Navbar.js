@@ -15,6 +15,14 @@ class Navbar extends React.Component {
     }
   }
 
+  renderSideNav() {
+    return (
+      <ul id="nav-mobile" className="side-nav">
+        {this.props.children}
+      </ul>
+    );
+  }
+
   render() {
     let {brand, className, ...props} = this.props;
     let classes = {
@@ -26,7 +34,7 @@ class Navbar extends React.Component {
       right: this.props.left
     };
     return (
-      <nav>
+      <nav className={className}>
         <div className='nav-wrapper'>
           <Col s={12}>
             <a href='/' className={cx(brandClasses)}>{brand}</a>
@@ -40,14 +48,6 @@ class Navbar extends React.Component {
           </Col>
         </div>
       </nav>
-    );
-  }
-
-  renderSideNav() {
-    return (
-      <ul id="nav-mobile" className="side-nav">
-        {this.props.children}
-      </ul>
     );
   }
 }
