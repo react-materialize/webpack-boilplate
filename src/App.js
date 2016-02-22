@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'react-materialize';
+import Breadcrumb from './Breadcrumb';
 
 export class App extends Component {
   constructor(props) {
@@ -8,9 +8,11 @@ export class App extends Component {
 
   render() {
     return (
-      <Button>Hi {this.props.name}!</Button>
+      <Breadcrumb>hi</Breadcrumb>
     );
   }
 }
 
-App.propTypes = { name: React.PropTypes.string };
+App.propTypes = {
+  name: React.PropTypes.string
+};
