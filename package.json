@@ -11,11 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jquery": "^2.1.4",
-    "materialize-css": "^0.97.3",
     "react": "^0.14.2",
-    "react-dom": "^0.14.2",
-    "react-materialize": ">=0.14.0"
+    "react-dom": "^0.14.2"
   },
   "devDependencies": {
     "babel": "^6.1.18",
