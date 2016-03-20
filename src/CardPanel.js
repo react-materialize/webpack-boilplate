@@ -1,19 +1,20 @@
 import React from 'react';
 import cx from 'classnames';
 
-class CardPanel extends React.Component {
-  render() {
-    let classes = {
-      'card-panel': true,
-      'teal': true
-    };
-    let {className, children, ...props} = this.props;
-    return (
-      <div className={cx(classes, className)}>
-        <span className="white-text">{children}</span>
+const CardPanel = ({
+  className,
+  children,
+  ...props
+}) => {
+  const classes = {
+    'card-panel': true
+  };
+
+  return (
+      <div className={cx(classes, className)} {...props}>
+        {children}
       </div>
-    );
-  }
+  );
 }
 
 export default CardPanel;
