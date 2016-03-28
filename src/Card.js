@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import Icon from './Icon';
 
-export class Card extends React.Component {
+class Card extends React.Component {
   constructor(props) {
     super(props);
     this.renderTitle = this.renderTitle.bind(this);
@@ -17,7 +17,7 @@ export class Card extends React.Component {
         {header}
         <div className={cx('card-content', textClassName)}>
           {title ? this.renderTitle(title, reveal) : null}
-          <p>{children}</p>
+          <div>{children}</div>
         </div>
         {this.renderReveal(title, reveal)}
         {actions ? this.renderAction(actions) : null}
@@ -66,3 +66,5 @@ Card.propTypes = {
   // The buttons to be displayed at the action area
   actions: React.PropTypes.arrayOf(React.PropTypes.element),
 }
+
+export default Card;

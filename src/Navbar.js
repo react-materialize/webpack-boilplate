@@ -54,8 +54,10 @@ class Navbar extends React.Component {
 
 Navbar.propTypes = {
   brand: React.PropTypes.node,
-  right: React.PropTypes.bool,
+  children: React.PropTypes.node,
+  className: React.PropTypes.string,
   left: React.PropTypes.bool,
-}
+  right: React.PropTypes.bool
+};
 
 export default Navbar;

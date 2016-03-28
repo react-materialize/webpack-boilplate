@@ -12,9 +12,29 @@ class Input extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.type === 'select' && !this.props.browserDefault && typeof $ !== 'undefined') {
+    if (this.isMaterialSelect()) {
       $(this.refs.inputEl).material_select();
       $(this.refs.inputEl).on('change', this._onChange);
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.isMaterialSelect()) {
+      $(this.refs.inputEl).material_select();
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.isMaterialSelect()) {
+      this.setState({
+        value: nextProps.defaultValue
+      }, () => $(this.refs.inputEl).material_select());
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.isMaterialSelect()) {
+      $(this.refs.inputEl).off('change', this._onChange);
     }
   }
 
@@ -120,6 +140,10 @@ class Input extends React.Component {
 
   isSelect() {
     return this.props.type === 'select';
+  }
+
+  isMaterialSelect() {
+    return this.props.type === 'select' && !this.props.browserDefault && typeof $ !== 'undefined';
   }
 }
 
