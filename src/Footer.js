@@ -32,11 +32,11 @@ class Footer extends Component {
   }
 }
 Footer.propTypes = {
-  links: PropTypes.node,
-  moreLinks: PropTypes.node,
-  copyrights: PropTypes.string,
+  children: PropTypes.node,
   className: PropTypes.string,
-  children: PropTypes.node
+  copyrights: PropTypes.string,
+  links: PropTypes.node,
+  moreLinks: PropTypes.node
 };
 
 export default Footer;
