@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CardPanel from './CardPanel';
+import Navbar from './Navbar';
 
 export class App extends Component {
   constructor(props) {
@@ -8,11 +8,7 @@ export class App extends Component {
 
   render() {
     return (
-      <div>
-        <CardPanel className="teal lighten-4 black-text">
-            I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-        </CardPanel>
-      </div>
+      <Navbar brand='Logo' className='light-blue lighten-2' right></Navbar>
     );
   }
 }
