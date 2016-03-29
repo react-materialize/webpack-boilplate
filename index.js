@@ -1,17 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Dropdown, Button} from 'react-materialize';
 
-const App = ({name}) =>
-  <Dropdown trigger={
-    <Button>Drop me!</Button>
-  }>
-    <p>Hello</p>
-    <p>Hello</p>
-    <p>Hello</p>
-    <p>Bye</p>
-  </Dropdown>;
+const App = () =>
+  <p>This is a boilplate, only webpack.</p>;
 
-ReactDOM.render(
-  <App />, document.querySelector('.react-root')
-);
+ReactDOM.render(<App />, document.querySelector('.react-root'));
