@@ -6,25 +6,24 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --colors --progress",
-    "start": "webpack-dev-server --config webpack.config.js --progress --colors"
+    "start": "webpack-serve"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jquery": "^2.1.4",
-    "materialize-css": "^0.97.3",
-    "react": "^0.14.2",
-    "react-dom": "^0.14.2",
-    "react-materialize": ">=0.14.0"
+    "jquery": "^3.3.1",
+    "materialize-css": "^0.100.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-materialize": "^2.3.3",
+    "webpack": "^4.16.0"
   },
   "devDependencies": {
-    "babel": "^6.1.18",
-    "babel-core": "^6.1.21",
-    "babel-loader": "^6.1.0",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-preset-react": "^6.1.18",
-    "babel-preset-stage-0": "^6.1.18",
-    "webpack": "^1.12.6",
-    "webpack-dev-server": "^1.12.1"
+    "@babel/core": "^7.0.0-beta.53",
+    "@babel/preset-env": "^7.0.0-beta.53",
+    "@babel/preset-react": "^7.0.0-beta.53",
+    "babel-loader": "^8.0.0-beta.4",
+    "error-overlay-webpack-plugin": "^0.1.5",
+    "webpack-serve": "^2.0.2"
   }
 }
