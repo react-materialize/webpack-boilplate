@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Dropdown, Button} from 'react-materialize';
+import { Dropdown, Button } from 'react-materialize';
 
 const App = ({name}) =>
   <Dropdown trigger={
@@ -13,5 +13,5 @@ const App = ({name}) =>
   </Dropdown>;
 
 ReactDOM.render(
-  <App />, document.querySelector('.react-root')
+  <App />, document.getElementById('root')
 );
