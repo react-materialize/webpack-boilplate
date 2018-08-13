@@ -6,15 +6,9 @@ import cx from 'classnames';
 class FeatureDiscovery extends Component {
   constructor(props) {
     super(props);
-    this.state = {mounted: false};
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
     this.close = this.close.bind(this);
-    this.reference = this.reference.bind(this);
-  }
-
-  componentDidMount() {
-    this.setState({mounted: true});
   }
 
   componentWillReceiveProps(nextProps) {
@@ -25,26 +19,27 @@ class FeatureDiscovery extends Component {
     }
   }
 
-  reference(element) {
-    this._element = element;
+  componentDidMount() {
+    debugger;
     if (this.props.open) {
       this.open();
     }
   }
 
   open() {
-    const element = $(this._element);
-    element.tapTarget('open');
+    // const element = $(this._element);
+    // element.tapTarget('open');
+    $(this._element).tapTarget('open');
 
-    const parent = element.parent('.tap-target-wrapper');
-    const origin = parent.find('.tap-target-origin');
-    const target = $('#' + this.props.target);
-    origin.click(
-      () => {
-        target.trigger('click')
-        target.trigger('mouseover')
-      }
-    )
+    // const parent = element.parent('.tap-target-wrapper');
+    // const origin = parent.find('.tap-target-origin');
+    // const target = $('#' + this.props.target);
+    // origin.click(
+      // () => {
+        // target.trigger('click')
+        // target.trigger('mouseover')
+      // }
+    // )
   }
 
   close() {
@@ -52,19 +47,13 @@ class FeatureDiscovery extends Component {
   }
 
   render() {
-    if (!this.state.mounted) {
-      return (
-        <div/>
-      );
-    }
-    const {children, className, target} = this.props;
+    const { children, className, target } = this.props;
     const classes = cx('tap-target', className);
 
     return (
       <div
         className={classes}
-        data-activates={target}
-        ref={this.reference}
+        ref={(el) => (this._element = el)}
       >
         <div className='tap-target-content'>
           {children}
