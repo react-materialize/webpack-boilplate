@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { TextInput } from './react-materialize';
+import { Select } from './react-materialize';
 
 class App extends React.Component {
   constructor(props) {
@@ -17,7 +17,10 @@ class App extends React.Component {
     return (
       <div className='row'>
         <div className='col6'>
-          <TextInput onChange={this.testo} type='email' label='email' validate error='needs proper email' />
+          <Select>
+            <option value='yes'>Yes</option>
+            <option value='no'>No</option>
+          </Select>
         </div>
       </div>
     )

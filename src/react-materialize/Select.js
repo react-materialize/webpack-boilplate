@@ -51,6 +51,7 @@ class Select extends Component {
       success,
       error,
       validate,
+      children,
       value,
       type
     } = this.props;
@@ -89,17 +90,24 @@ class Select extends Component {
     const renderIcon = () =>
       icon && <i className="material-icons prefix">{icon}</i>;
 
+    const renderOptions = () =>
+      React.Children.map(children, child =>
+        React.cloneElement(child, { key: child.props.value })
+      )
+
     return (
       <div className={wrapperClasses}>
         {renderIcon()}
-        <input
+        <select
           ref={el => {
             this._selectRef = el;
           }}
           onChange={this.handleChange}
           className={cx({ validate }, inputClassName)}
           {...inputProps}
-        />
+        >
+          {renderOptions()}
+        </select>
         {renderLabel()}
       </div>
     );
