@@ -93,7 +93,7 @@ class Select extends Component {
     const renderOptions = () =>
       React.Children.map(children, child =>
         React.cloneElement(child, { key: child.props.value })
-      )
+      );
 
     return (
       <div className={wrapperClasses}>
