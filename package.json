@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "jquery": "^3.3.1",
-    "materialize-css": "^0.100.2",
+    "materialize-css": "^1.0.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-materialize": "^2.3.3",
