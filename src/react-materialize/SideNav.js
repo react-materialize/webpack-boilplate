@@ -11,26 +11,22 @@ class SideNav extends Component {
 
   componentDidMount() {
     const { options = {} } = this.props;
-    $('.sidenav').sidenav(options);
+    $(this._trigger).sideNav(options);
   }
 
   render() {
     const { className, children, trigger, fixed, ...props } = this.props;
     delete props.id;
     delete props.options;
-    const classNames = cx(
-      'sidenav',
-      { 'sidenav-fixed': fixed || !trigger },
-      className
-    );
+    const classNames = cx('side-nav', { fixed: fixed || !trigger }, className);
 
     return (
-      <div>
+      <span>
         {this.renderTrigger()}
         <ul id={this.id} className={classNames} {...props}>
           {children}
         </ul>
-      </div>
+      </span>
     );
   }
 
@@ -40,14 +36,10 @@ class SideNav extends Component {
       return;
     }
     const triggerView = fixed ? 'hide-on-large-only' : 'show-on-large';
-    const classNames = cx(
-      trigger.props.className,
-      triggerView,
-      'sidenav-trigger'
-    );
+    const classNames = cx(trigger.props.className, triggerView);
     return React.cloneElement(trigger, {
-      ref: t => (this._trigger = `[data-target=${this.id}]`),
-      'data-target': this.id,
+      ref: t => (this._trigger = `[data-activates=${this.id}]`),
+      'data-activates': this.id,
       className: classNames
     });
   }
@@ -55,7 +47,7 @@ class SideNav extends Component {
 
 SideNav.propTypes = {
   /**
-   * Adds sidenav-fixed class to sidenav
+   * Adds fixed class to side-nav
    */
   fixed: PropTypes.bool,
   /**
@@ -71,11 +63,13 @@ SideNav.propTypes = {
    * More info: http://materializecss.com/side-nav.html#options
    */
   options: PropTypes.shape({
+    menuWidth: PropTypes.number,
     edge: PropTypes.oneOf(['left', 'right']),
+    closeOnClick: PropTypes.bool,
     draggable: PropTypes.bool
   }),
   /**
-   * Additional classes added to 'sidenav'
+   * Additional classes added to 'side-nav'
    */
   className: PropTypes.string,
   children: PropTypes.node

@@ -39,7 +39,6 @@ import Tab from './Tab';
 import Table from './Table';
 import Tabs from './Tabs';
 import Tag from './Tag';
-import TextInput from './TextInput';
 import Toast from './Toast';
 
 export {
@@ -84,6 +83,5 @@ export {
   Table,
   Tabs,
   Tag,
-  TextInput,
   Toast
 };

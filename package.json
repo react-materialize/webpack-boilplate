@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --colors --progress",
-    "start": "webpack-serve"
+    "start": "webpack-serve",
+    "update": "cp ../react-materialize/src/* src/react-materialize/"
   },
   "author": "",
   "license": "ISC",

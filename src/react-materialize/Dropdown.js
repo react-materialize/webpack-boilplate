@@ -42,9 +42,9 @@ class Dropdown extends Component {
     const { trigger } = this.props;
 
     return React.cloneElement(trigger, {
-      ref: t => (this._trigger = `[data-target=${this.idx}]`),
-      className: cx(trigger.props.className, 'dropdown-trigger'),
-      'data-target': this.idx
+      ref: t => (this._trigger = `[data-activates=${this.idx}]`),
+      className: cx(trigger.props.className, 'dropdown-button'),
+      'data-activates': this.idx
     });
   }
 }
@@ -59,7 +59,7 @@ Dropdown.propTypes = {
 
   /**
    * Options hash for the dropdown
-   * <a target="_blank" href="http://materializecss.com/dropdown.html#options">http://materializecss.com/dropdown.html</a>
+   * more info: http://materializecss.com/dropdown.html#options
    */
   options: PropTypes.shape({
     inDuration: PropTypes.number,
@@ -67,7 +67,7 @@ Dropdown.propTypes = {
     constrainWidth: PropTypes.bool,
     hover: PropTypes.bool,
     gutter: PropTypes.number,
-    coverTrigger: PropTypes.bool,
+    belowOrigin: PropTypes.bool,
     alignment: PropTypes.oneOf(['left', 'right'])
   })
 };
