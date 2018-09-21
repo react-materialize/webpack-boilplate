@@ -262,7 +262,6 @@ class Input extends Component {
           : defaultValue;
 
       if (inputType === 'checkbox' || inputType === 'radio') {
-        console.log(this.state.checked)
         return (
           <div className={cx(classes)}>
             {this.renderIcon()}

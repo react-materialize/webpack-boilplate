@@ -39,6 +39,8 @@ class TextInput extends Component {
       icon,
       label,
       inputClassName,
+      success,
+      error,
       validate,
       value,
       type
@@ -65,14 +67,18 @@ class TextInput extends Component {
     };
 
     const renderLabel = () =>
-      label && <label data-success='yes' data-error='no' htmlFor={inputProps.id}>{label}</label>;
+      label && (
+        <label
+          data-success={success}
+          data-error={error}
+          htmlFor={inputProps.id}
+        >
+          {label}
+        </label>
+      );
 
     const renderIcon = () =>
       icon && <i className="material-icons prefix">{icon}</i>;
-
-    const renderCustomMessages = () => (
-      <span className="helper-text" data-error="wrong" data-success="right"></span>
-    );
 
     return (
       <div className={wrapperClasses}>
@@ -86,7 +92,6 @@ class TextInput extends Component {
           {...inputProps}
         />
         {renderLabel()}
-        {renderCustomMessages()}
       </div>
     );
   }
@@ -138,6 +143,14 @@ TextInput.propTypes = {
    * Add validate class to input
    */
   validate: PropTypes.bool,
+  /*
+   * Custom success message
+   */
+  success: PropTypes.string,
+  /*
+   * Custom error message
+   */
+  error: PropTypes.string,
   /*
    * Additional classes for input
    */
