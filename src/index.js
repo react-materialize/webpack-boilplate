@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Select } from './react-materialize';
+import { Carousel } from '../../react-materialize/src';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,14 +15,13 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='row'>
-        <div className='col6'>
-          <Select>
-            <option value='yes'>Yes</option>
-            <option value='no'>No</option>
-          </Select>
-        </div>
-      </div>
+      <Carousel images={[
+        'https://picsum.photos/200/?random',
+        'https://picsum.photos/200/?random',
+        'https://picsum.photos/200/?random',
+        'https://picsum.photos/200/?random',
+        'https://picsum.photos/200/?random'
+      ]} />
     )
   }
 }
